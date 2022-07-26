@@ -22,6 +22,7 @@ t_node	*new_node(int value);
 void 	printn(t_node *first);
 int		only_numbers(char *str);
 void 	swap(t_node **head);
+void 	double_swap(t_node **head_a, t_node **head_b);
 
 
 #endif

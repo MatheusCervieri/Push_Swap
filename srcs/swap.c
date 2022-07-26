@@ -11,3 +11,10 @@ void    swap(t_node **head)
     aux_node->next->value = aux;
 }
 
+void double_swap(t_node **head_a, t_node **head_b)
+{
+    swap(head_a);
+    swap(head_b);
+    ft_printf("ss\n");
+}
+
