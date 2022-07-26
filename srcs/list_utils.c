@@ -47,7 +47,7 @@ t_node	*get_first_node(t_node *head)
 {
 	t_node	*temp;
 
-	if(first == NULL)
+	if(head == NULL)
 		return (NULL);
 	temp = head; 
 	while(temp->prev != NULL)

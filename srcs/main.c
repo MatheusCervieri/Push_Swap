@@ -23,9 +23,13 @@ int main(int argc, char *argv[])
 {
 
 	t_node	*stack_a;
+	t_node	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL; 
 	input_validation(argc, argv, &stack_a);
-	printn(stack_a);
+	input_validation(argc, argv, &stack_b);
+	push(&stack_a, &stack_b);
+	printn(stack_b);
 	return (0);
 }

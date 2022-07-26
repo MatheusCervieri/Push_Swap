@@ -23,7 +23,8 @@ NAME = push_swap
 SRC_FILES = main.c \
 			list_utils.c \
 			utils.c \
-			swap.c
+			swap.c \
+			push.c \
 
 LIBFT_A = $(LIBS_PATH)libft.a 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))
