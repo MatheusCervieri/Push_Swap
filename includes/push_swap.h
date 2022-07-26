@@ -20,4 +20,7 @@ void	append_node(t_node **first, t_node *new);
 t_node	*get_last_node(t_node *first);
 t_node	*new_node(int value);
 void 	printn(t_node *first);
+int		only_numbers(char *str);
+void 	swap(t_node *head);
+
 #endif
