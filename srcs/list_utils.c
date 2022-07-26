@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 t_node	*new_node(int value)
 {
 	t_node *new;
@@ -20,15 +22,15 @@ t_node *get_last_node(t_node *first)
 	return (temp);
 }
 
-t_node *add_node(t_node *first, t_node *new)
+void append_node(t_node *first, t_node *new)
 {
 	t_node *last;
 
 	if(first == NULL)
 	{
 		first = new;
-		new->prev = NULL;
-		new->next = NULL;
+		first->prev = NULL;
+		first->next = NULL;
 	}
 	else
 	{
@@ -37,4 +39,16 @@ t_node *add_node(t_node *first, t_node *new)
 		new->prev = last;
 		new->next = NULL;
 	}
+	
+}
+
+void printn(t_node *first)
+{
+	t_node *temp = first;
+
+	while(temp != NULL)
+	{
+		ft_printf("%i ,", temp->value);
+	}
+	ft_printf("\n");
 }
