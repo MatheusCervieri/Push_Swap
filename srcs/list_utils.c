@@ -22,19 +22,20 @@ t_node *get_last_node(t_node *first)
 	return (temp);
 }
 
-void append_node(t_node *first, t_node *new)
+void append_node(t_node **first, t_node *new)
 {
 	t_node *last;
 
-	if(first == NULL)
+	if(*first == NULL)
 	{
-		first = new;
-		first->prev = NULL;
-		first->next = NULL;
+		*first = new;
+		new->prev = NULL;
+		new->next = NULL;
+		return ;
 	}
 	else
 	{
-		last = get_last_node(first);
+		last = get_last_node(*first);
 		last->next = new; 
 		new->prev = last;
 		new->next = NULL;
@@ -49,6 +50,7 @@ void printn(t_node *first)
 	while(temp != NULL)
 	{
 		ft_printf("%i ,", temp->value);
+		temp = temp->next;
 	}
 	ft_printf("\n");
 }
