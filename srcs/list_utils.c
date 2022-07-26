@@ -43,6 +43,39 @@ void append_node(t_node **first, t_node *new)
 	
 }
 
+t_node	*get_first_node(t_node *head)
+{
+	t_node	*temp;
+
+	if(first == NULL)
+		return (NULL);
+	temp = head; 
+	while(temp->prev != NULL)
+		temp = temp->prev;
+	return (temp);
+}
+
+void	insert_beggining(t_node **head, t_node *new)
+{
+	t_node *first;
+
+	if(*head == NULL)
+	{
+		*head = new;
+		new->prev = NULL;
+		new->next = NULL;
+		return ;
+	}
+	else
+	{
+		first = get_first_node(*head);
+		first->prev = new; 
+		new->prev = NULL;
+		new->next = first;
+		*head = new;
+	}
+}
+
 void printn(t_node *first)
 {
 	t_node *temp = first;
