@@ -25,6 +25,7 @@ void 	swap(t_node **head);
 void 	double_swap(t_node **head_a, t_node **head_b);
 void	insert_beggining(t_node **head, t_node *new);
 void 	push(t_node **receiver, t_node **giver);
+void	rotate(t_node **head);
 
 
 #endif

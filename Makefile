@@ -25,6 +25,7 @@ SRC_FILES = main.c \
 			utils.c \
 			swap.c \
 			push.c \
+			rotate.c \
 
 LIBFT_A = $(LIBS_PATH)libft.a 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))

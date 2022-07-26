@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	stack_b = NULL; 
 	input_validation(argc, argv, &stack_a);
 	input_validation(argc, argv, &stack_b);
-	push(&stack_a, &stack_b);
-	printn(stack_b);
+	rotate(&stack_a);
+	printn(stack_a);
 	return (0);
 }
