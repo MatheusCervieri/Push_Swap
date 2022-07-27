@@ -1,5 +1,12 @@
 #include "push_swap.h"
 
+/*
+Step 2 : Check if the numbers in A are all sorted. If so, end the program without printing anything. It’d be preferable to write a function A_is_sorted()
+
+Step 3 : If the size of A ≤ 5, call function sort_small_stack(). Else, call function sort_big_stack()
+*/
+
+
 void input_validation(int argc, char *argv[], t_node **node)
 {
 	int	i;
@@ -32,6 +39,8 @@ int main(int argc, char *argv[])
 	stack_b = NULL; 
 	input_validation(argc, argv, &stack_a);
 	input_validation(argc, argv, &stack_b);
+	if(!is_sorted(&stack_a))
+		ft_printf("Não está em ordem :( \n");
 	printn(stack_a);
 	printn(stack_b);
 	free_list(&stack_a);
