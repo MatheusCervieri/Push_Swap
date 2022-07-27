@@ -76,6 +76,21 @@ void	insert_beggining(t_node **head, t_node *new)
 	}
 }
 
+int list_size(t_node *head)
+{
+	int len; 
+
+	if(head == NULL)
+		return (0);
+	len = 1;
+	while(head->next != NULL)
+	{
+		head = head->next;
+		len++;
+	}
+	return (len);
+}
+
 void printn(t_node *first)
 {
 	t_node *temp = first;

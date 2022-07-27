@@ -33,6 +33,7 @@ void 	free_list(t_node **head);
 int		just_numbers(char *str);
 void	exit_program(t_node **head); 
 int 	is_sorted(t_node **head);
+int 	list_size(t_node *head);
 
 
 
