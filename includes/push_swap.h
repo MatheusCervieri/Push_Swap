@@ -27,6 +27,9 @@ void	insert_beggining(t_node **head, t_node *new);
 void 	push(t_node **receiver, t_node **giver);
 void	rotate(t_node **head);
 void 	reverse(t_node **head);
+void 	double_rotate(t_node **head_a, t_node **head_b);
+void 	double_reverse(t_node **head_a, t_node **head_b);
+
 
 
 #endif

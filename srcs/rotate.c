@@ -15,3 +15,10 @@ void rotate(t_node **head)
     append_node(&head_clone, aux);
     ft_printf("ROTATE \n");
 }
+
+void double_rotate(t_node **head_a, t_node **head_b)
+{
+    rotate(head_a);
+    rotate(head_b);
+    ft_printf("rr\n");
+}

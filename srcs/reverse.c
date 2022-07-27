@@ -15,3 +15,10 @@ void reverse(t_node **head)
     insert_beggining(head, aux);
     ft_printf("Reverse \n");
 }
+
+void double_reverse(t_node **head_a, t_node **head_b)
+{
+    reverse(head_a);
+    reverse(head_b);
+    ft_printf("rrr");
+}
