@@ -16,3 +16,10 @@ void free_list(t_node **head)
     }
     free(head_clone);
 }
+
+void exit_program(t_node **head) 
+{   
+    free_list(head);
+    ft_printf("Error\n");
+    exit(0);
+}

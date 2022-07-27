@@ -11,9 +11,10 @@ void input_validation(int argc, char *argv[], t_node **node)
 		i = 1;
 		while(argv[i])
 		{ 
-
+			//if(ft_atoi(argv[i]) > 2147483647)
+				//ft_printf("There is a big number in the arguments");
 			if (!just_numbers(argv[i]))
-				ft_printf("It is not just numbers! \n");
+				exit_program(node);
 			append_node(node, new_node(ft_atoi(argv[i])));
 			i++;
 		}

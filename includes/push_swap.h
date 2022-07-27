@@ -31,6 +31,7 @@ void 	double_rotate(t_node **head_a, t_node **head_b);
 void 	double_reverse(t_node **head_a, t_node **head_b);
 void 	free_list(t_node **head);
 int		just_numbers(char *str);
+void	exit_program(t_node **head); 
 
 
 
