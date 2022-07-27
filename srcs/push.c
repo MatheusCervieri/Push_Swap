@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void push(t_node **receiver, t_node **giver)
+void push(t_node **receiver, t_node **giver, char c)
 {
     t_node  *aux_node_r;
     t_node  *aux_node_g;
@@ -15,5 +15,5 @@ void push(t_node **receiver, t_node **giver)
     if(aux_node_g)
         aux_node_g->prev = NULL;
     insert_beggining(&aux_node_r, aux_insert);
-    ft_printf("push");
+    ft_printf("p%c", c);
 }

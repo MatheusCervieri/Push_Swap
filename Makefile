@@ -28,7 +28,8 @@ SRC_FILES = main.c \
 			rotate.c \
 			reverse.c \
 			free_list.c \
-			is_sorted.c
+			is_sorted.c \
+			sort.c
 
 LIBFT_A = $(LIBS_PATH)libft.a 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))

@@ -49,9 +49,7 @@ int main(int argc, char *argv[])
 	input_validation(argc, argv, &stack_b);
 	if(!is_sorted(&stack_a))
 		ft_printf("Não está em ordem :( \n");
-	ft_printf("%i\n \n \n", list_size(stack_a));
-	swap(&stack_a, 'a');
-	double_swap(&stack_a, &stack_b);
+	sort(&stack_a, &stack_b);
 	printn(stack_a);
 	printn(stack_b);
 	free_list(&stack_a);

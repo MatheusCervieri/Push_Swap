@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 //doing.
-void reverse(t_node **head)
+void reverse(t_node **head, char c)
 {
     t_node  *aux;
     t_node  *head_clone;
@@ -13,12 +13,13 @@ void reverse(t_node **head)
     if(aux->prev)
         (aux->prev)->next = NULL;
     insert_beggining(head, aux);
-    ft_printf("Reverse \n");
+    if (c != 0)
+    ft_printf("rr%c\n", c);
 }
 
 void double_reverse(t_node **head_a, t_node **head_b)
 {
-    reverse(head_a);
-    reverse(head_b);
+    reverse(head_a, 0);
+    reverse(head_b, 0);
     ft_printf("rrr");
 }

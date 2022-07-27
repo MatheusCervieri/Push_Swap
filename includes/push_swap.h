@@ -24,9 +24,9 @@ int		only_numbers(char *str);
 void    swap(t_node **head, char c);
 void 	double_swap(t_node **head_a, t_node **head_b);
 void	insert_beggining(t_node **head, t_node *new);
-void 	push(t_node **receiver, t_node **giver);
-void	rotate(t_node **head);
-void 	reverse(t_node **head);
+void 	push(t_node **receiver, t_node **giver, char c);
+void 	rotate(t_node **head, char c);
+void 	reverse(t_node **head, char c);
 void 	double_rotate(t_node **head_a, t_node **head_b);
 void 	double_reverse(t_node **head_a, t_node **head_b);
 void 	free_list(t_node **head);
@@ -34,6 +34,7 @@ int		just_numbers(char *str);
 void	exit_program(t_node **head); 
 int 	is_sorted(t_node **head);
 int 	list_size(t_node *head);
+void 	sort(t_node **stack_a, t_node **stack_b);
 
 
 
