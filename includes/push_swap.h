@@ -29,6 +29,7 @@ void	rotate(t_node **head);
 void 	reverse(t_node **head);
 void 	double_rotate(t_node **head_a, t_node **head_b);
 void 	double_reverse(t_node **head_a, t_node **head_b);
+void 	free_list(t_node **head);
 
 
 
