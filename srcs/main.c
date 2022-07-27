@@ -9,9 +9,11 @@ void input_validation(int argc, char *argv[], t_node **node)
 	{
 
 		i = 1;
-		// Lidar com exceções.
 		while(argv[i])
 		{ 
+
+			if (!just_numbers(argv[i]))
+				ft_printf("It is not just numbers! \n");
 			append_node(node, new_node(ft_atoi(argv[i])));
 			i++;
 		}
