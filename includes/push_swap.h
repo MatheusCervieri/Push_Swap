@@ -21,7 +21,7 @@ t_node	*get_last_node(t_node *first);
 t_node	*new_node(int value);
 void 	printn(t_node *first);
 int		only_numbers(char *str);
-void 	swap(t_node **head);
+void    swap(t_node **head, char c);
 void 	double_swap(t_node **head_a, t_node **head_b);
 void	insert_beggining(t_node **head, t_node *new);
 void 	push(t_node **receiver, t_node **giver);

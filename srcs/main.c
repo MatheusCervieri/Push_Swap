@@ -4,6 +4,14 @@
 Step 2 : Check if the numbers in A are all sorted. If so, end the program without printing anything. It’d be preferable to write a function A_is_sorted()
 
 Step 3 : If the size of A ≤ 5, call function sort_small_stack(). Else, call function sort_big_stack()
+
+1- editar as funções de ações para elas já escreverem suas ações correspondentes. 
+1.1- Entender a ordem certinha das stacks.
+2- Sort com 3 números. 
+3- Sort com 5 números. 
+4- Sort com 100 números.
+5- Sort com 500 numeros. 
+
 */
 
 
@@ -42,6 +50,8 @@ int main(int argc, char *argv[])
 	if(!is_sorted(&stack_a))
 		ft_printf("Não está em ordem :( \n");
 	ft_printf("%i\n \n \n", list_size(stack_a));
+	swap(&stack_a, 'a');
+	double_swap(&stack_a, &stack_b);
 	printn(stack_a);
 	printn(stack_b);
 	free_list(&stack_a);
