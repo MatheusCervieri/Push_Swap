@@ -9,6 +9,10 @@
     reverse(stack_a, 'a');
     ra:
     rotate(stack_a, 'a');
+    pa:
+    push(stack_a, stack_b, 'a');
+    pb:
+    push(stack_b, stack_a, 'b');
 */
 
 void simple_sort(t_node **stack_a)
@@ -37,13 +41,26 @@ void simple_sort(t_node **stack_a)
         reverse(stack_a, 'a');
 }
 
+void sort_five(t_node **stack_a, t_node **stack_b)
+{
+
+    push(stack_b, stack_a, 'b');
+    push(stack_b, stack_a, 'b');
+    simple_sort(stack_a);
+    //buguei.
+}
+
 void sort(t_node **stack_a, t_node **stack_b)
 {
     int size;
 
     size = list_size(*stack_a);
+    if(size == 2)
+        swap(stack_a, 'a');
     if(size == 3)
         simple_sort(stack_a);
+    if(size == 5)
+
     printn(*stack_b);
 }
 
