@@ -9,6 +9,8 @@ Step 3 : If the size of A ≤ 5, call function sort_small_stack(). Else, call fu
 1.1- Entender a ordem certinha das stacks.
 2- Sort com 3 números. 
 3- Sort com 5 números. 
+//We need to find the medium. 
+
 4- Sort com 100 números.
 5- Sort com 500 numeros. 
 
@@ -49,6 +51,7 @@ int main(int argc, char *argv[])
 	input_validation(argc, argv, &stack_b);
 	if(!is_sorted(&stack_a))
 		ft_printf("Não está em ordem :( \n");
+	ft_printf("MID: %i\n", find_mid(stack_a));
 	sort(&stack_a, &stack_b);
 	printn(stack_a);
 	printn(stack_b);
