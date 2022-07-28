@@ -91,7 +91,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     size = list_size(*stack_a);
     while (i < size)
     {
-            push(stack_b, stack_a, 'b');
+        push(stack_b, stack_a, 'b');
         i++;
     }
     printn(*stack_a);

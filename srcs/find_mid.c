@@ -41,3 +41,24 @@ int    find_mid(t_node *stack_a)
     sort_array(array_values, stack_len);
     return(array_values[stack_len / 2]);
 }
+
+int    find_chunk(t_node *stack_a, int chunks_amount,  int chunk)
+{
+    int *array_values;
+    int stack_len;
+    int i;
+    
+    stack_len = list_size(stack_a);
+    array_values = malloc(stack_len * sizeof(int*));
+    if(!array_values)
+        ft_printf("COLOCAR UM ERRO AQUI");
+    i = 0;
+    while (i < stack_len)
+    {
+        array_values[i] = stack_a->value;
+        stack_a = stack_a->next;
+        i++;
+    }
+    sort_array(array_values, stack_len);
+    return(array_values[((stack_len / chunks_amount))  * chunk]);
+}
