@@ -21,5 +21,5 @@ void double_reverse(t_node **head_a, t_node **head_b)
 {
     reverse(head_a, 0);
     reverse(head_b, 0);
-    ft_printf("rrr");
+    ft_printf("rrr\n");
 }

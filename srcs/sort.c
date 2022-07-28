@@ -59,8 +59,7 @@ void sort(t_node **stack_a, t_node **stack_b)
         swap(stack_a, 'a');
     if(size == 3)
         simple_sort(stack_a);
-    if(size == 5)
-
-    printn(*stack_b);
+    if(size <= 100)
+        hundread_sort(stack_a, stack_b);
 }
 

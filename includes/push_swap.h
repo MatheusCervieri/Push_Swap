@@ -36,6 +36,7 @@ int 	is_sorted(t_node **head);
 int 	list_size(t_node *head);
 void 	sort(t_node **stack_a, t_node **stack_b);
 int		find_mid(t_node *stack_a);
+void 	hundread_sort(t_node **stack_a, t_node **stack_b);
 
 
 

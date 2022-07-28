@@ -48,11 +48,10 @@ int main(int argc, char *argv[])
 	stack_a = NULL;
 	stack_b = NULL; 
 	input_validation(argc, argv, &stack_a);
-	input_validation(argc, argv, &stack_b);
 	if(!is_sorted(&stack_a))
 		ft_printf("Não está em ordem :( \n");
-	ft_printf("MID: %i\n", find_mid(stack_a));
 	sort(&stack_a, &stack_b);
+	 
 	printn(stack_a);
 	printn(stack_b);
 	free_list(&stack_a);
