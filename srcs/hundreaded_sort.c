@@ -26,13 +26,27 @@ void put_bigger_a(t_node **stack_b)
     big_position = get_node_position(*stack_b, get_max_node(*stack_b));
     //ft_printf("max node %i\n", big_position);
     ft_printf("middle %i", middle);
-    i = 0;
-    while (i < big_position - 1)
+    if(big_position > middle)
     {
-        rotate(stack_b, 'b'); //rb
-        i++;
+        i = size;
+        while (i + 1 > big_position)
+        {
+            reverse(stack_b, 'b');
+            i--;
+        }
     }
-       
+    else 
+    {
+        i = 0;
+        while (i < big_position - 1)
+        {
+            rotate(stack_b, 'b'); //rb
+            i++;
+        }
+    }
+    /*
+  
+    */ 
     
 }
 
