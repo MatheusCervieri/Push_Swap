@@ -40,5 +40,7 @@ void 	hundread_sort(t_node **stack_a, t_node **stack_b);
 int 	get_node_position(t_node *head, int value);
 int		get_max_node(t_node *head);
 int    	find_chunk(t_node *stack_a, int chunks_amount,  int chunk);
+int 	get_rand_chunk_position_head(t_node *head, int value_last, int value_first);
+int 	get_rand_chunk_position_top(t_node *head, int value_last, int value_first);
 
 #endif

@@ -50,11 +50,11 @@ int main(int argc, char *argv[])
 	input_validation(argc, argv, &stack_a);
 	if(!is_sorted(&stack_a))
 		ft_printf("Não está em ordem :( \n");
-	ft_printf("Chunk is %i\n", find_chunk(stack_a, 5, 1));
-	ft_printf("Chunk is %i\n", find_chunk(stack_a, 5, 2));
-	ft_printf("Chunk is %i\n", find_chunk(stack_a, 5, 3));
-	ft_printf("Chunk is %i\n", find_chunk(stack_a, 5, 4));
-	ft_printf("Chunk is %i\n", find_chunk(stack_a, 5, 5));
+	ft_printf("First chunk %i\n", find_chunk(stack_a, 5, 1));
+	ft_printf("First chunk %i\n", find_chunk(stack_a, 5, 2));
+	ft_printf("Position of the first apperence of the chunk beggining in the head %i\n", get_rand_chunk_position_head(stack_a,  find_chunk(stack_a, 5, 1), 1));
+	ft_printf("Position of the first apperence of the chunk beggining in the top %i\n", get_rand_chunk_position_top(stack_a,  find_chunk(stack_a, 5, 1), 1));
+
 	sort(&stack_a, &stack_b);
 	 
 	printn(stack_a);
