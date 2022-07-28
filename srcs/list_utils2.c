@@ -32,3 +32,37 @@ int get_node_position(t_node *head, int value)
 	return (len);
 }
 
+
+int get_rand_chank_position_head(t_node *head, int value)
+{
+	int len; 
+
+	if(head == NULL)
+		return (0);
+	len = 1;
+	while(head->next != NULL)
+	{
+        if(head->value < value)
+            return(len);
+		head = head->next;
+		len++;
+	}
+	return (len);
+}
+
+int get_rand_chank_position_top(t_node *last_node, int value)
+{
+	int len; 
+
+	if(last_node) == NULL)
+		return (0);
+	len = 1;
+	while(last_node->prev != NULL)
+	{
+        if(last_node->value < value)
+            return(len);
+		last_node = last_node->prev;
+		len++;
+	}
+	return (len);
+}

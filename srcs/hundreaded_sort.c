@@ -77,6 +77,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     size = list_size(*stack_a);
     int i = 0;
     ft_printf("MIDDD: %i \n", mid);
+    //
     while (i < size)
     {
         if((*stack_a)->value < mid)
