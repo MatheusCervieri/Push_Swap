@@ -32,6 +32,7 @@ SRC_FILES = main.c \
 			sort.c \
 			find_mid.c \
 			hundreaded_sort.c \
+			list_utils2.c \
 
 LIBFT_A = $(LIBS_PATH)libft.a 
 SOURCES = $(addprefix $(SRCS_PATH), $(SRC_FILES))
