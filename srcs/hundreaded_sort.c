@@ -77,8 +77,8 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     //
     int hold_first;
     int hold_second; 
-    int big = find_chunk(*stack_a, 3, 2);
-    int small = get_min_node(*stack_a);
+    int big = get_max_node(*stack_a) + 1;
+    int small = find_chunk(*stack_a, 5, 4);
     ft_printf("Small: %i\n", small);
     ft_printf("Big: %i \n", big);
     j = 0;
