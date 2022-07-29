@@ -77,14 +77,21 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     //
     int hold_first;
     int hold_second; 
+    int big = find_chunk(*stack_a, 3, 2);
+    int small = get_min_node(*stack_a);
+    ft_printf("Small: %i\n", small);
+    ft_printf("Big: %i \n", big);
     j = 0;
-    while (get_rand_chunk_position_head(*stack_a, 5 , 1) != -10 || get_rand_chunk_position_top(*stack_a, 5, 1) != -10)
+    while (get_rand_chunk_position_head(*stack_a, big , small) != -10 || get_rand_chunk_position_top(*stack_a, big, small) != -10)
     {
-    hold_first = get_rand_chunk_position_head(*stack_a, 5 , 1);
-    hold_second = get_rand_chunk_position_top(*stack_a, 5, 1);
+    hold_first = get_rand_chunk_position_head(*stack_a, big , small);
+    hold_second = get_rand_chunk_position_top(*stack_a, big, small);
     ft_printf("Hold firsxt%i\n",  hold_first);
     ft_printf("Hold sec%i\n",  hold_second);
-
+    if(hold_first == 1)
+        push(stack_b, stack_a, 'b');
+    else
+    {
     if ((hold_first) >= (hold_second))
     {
         i = 0;
@@ -109,6 +116,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     printn(*stack_a);
     printn(*stack_b);
     push(stack_b, stack_a, 'b');
+    }
     }
     hold_first = get_rand_chunk_position_head(*stack_a,  4, 2);
     hold_second = get_rand_chunk_position_top(*stack_a, 4, 2);

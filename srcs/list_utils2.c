@@ -14,6 +14,20 @@ int get_max_node(t_node *head)
     }
     return max;
 }
+int get_min_node(t_node *head)
+{
+    if(head == NULL){
+        return (0);
+    }
+    int min = head->value;
+    while(head != NULL){
+        if(head->value < min){
+            min = head->value;
+        }
+        head = head->next;
+    }
+    return min;
+}
 
 int get_node_position(t_node *head, int value)
 {
