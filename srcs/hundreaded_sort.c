@@ -88,10 +88,9 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     hold_second = get_rand_chunk_position_top(*stack_a, big, small);
     ft_printf("Hold firsxt%i\n",  hold_first);
     ft_printf("Hold sec%i\n",  hold_second);
-    if(hold_first == 1)
-        push(stack_b, stack_a, 'b');
-    else
-    {
+   
+  
+    
     if ((hold_first) >= (hold_second))
     {
         i = 0;
@@ -105,7 +104,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     else
     {
         i = 0;
-        while (i < hold_first)
+        while (i < hold_first - 1)
         {
         rotate(stack_a, 'a');
         printn(*stack_a);
@@ -116,7 +115,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     printn(*stack_a);
     printn(*stack_b);
     push(stack_b, stack_a, 'b');
-    }
+    
     }
     hold_first = get_rand_chunk_position_head(*stack_a,  4, 2);
     hold_second = get_rand_chunk_position_top(*stack_a, 4, 2);
