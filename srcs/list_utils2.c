@@ -103,3 +103,16 @@ int is_there_chunk(t_node *head, int value_last, int value_first)
 }
 
 
+t_node *clone_list(t_node *head)
+{
+	t_node *cloned = malloc(list_size(head) * sizeof(t_node*));
+	t_node *cloned_head = cloned;
+	cloned->value = head->value;
+	head = head->next;
+	while(head != NULL)
+	{
+		append_node(&cloned, new_node(head->value));
+		head = head->next;
+	}
+	return (cloned_head);
+}

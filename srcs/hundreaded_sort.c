@@ -79,38 +79,25 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
     int big = find_chunk(*stack_a, 5, 1);
     int small = get_min_node(*stack_a);
 */
-
-void hundread_sort(t_node **stack_a, t_node **stack_b)
+void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 {
-    
-
     int i;
-    int j;
     i = 0;
     //
     int hold_first;
     int hold_second; 
-    int big = find_chunk(*stack_a, 5, 1);
-    int small = get_min_node(*stack_a);
-    ft_printf("Small: %i\n", small);
-    ft_printf("Big: %i \n", big);
-    j = 0;
+
     while (get_rand_chunk_position_head(*stack_a, big , small) != -10 || get_rand_chunk_position_top(*stack_a, big, small) != -10)
     {
     hold_first = get_rand_chunk_position_head(*stack_a, big , small);
     hold_second = get_rand_chunk_position_top(*stack_a, big, small);
-    ft_printf("Hold firsxt%i\n",  hold_first);
-    ft_printf("Hold sec%i\n",  hold_second);
-   
   
-    
     if ((hold_first) >= (hold_second))
     {
         i = 0;
         while ((i) < (hold_second))
         {
             reverse(stack_a, 'a');
-            printn(*stack_a);
             i++;
         }
     }
@@ -120,50 +107,27 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
         while (i < hold_first - 1)
         {
         rotate(stack_a, 'a');
-        printn(*stack_a);
         i++;
         }
        // girar para cima fazendo hold first chegar primeiro - rotate
     }
-    printn(*stack_a);
-    printn(*stack_b);
     push(stack_b, stack_a, 'b');
     
     }
-    hold_first = get_rand_chunk_position_head(*stack_a,  4, 2);
-    hold_second = get_rand_chunk_position_top(*stack_a, 4, 2);
-    ft_printf("Hold firsxt%i\n",  hold_first);
-    ft_printf("Hold sec%i\n",  hold_second);
 
+}
+
+void hundread_sort(t_node **stack_a, t_node **stack_b)
+{
+    t_node *clone = clone_list(*stack_a);
+    ft_printf("Cloned list: \n");
+    printn(clone);
+       ft_printf("Original listt: \n");
+    printn(*stack_a);
+   push_chunk_to_b(stack_a, stack_b, get_max_node(*stack_a) + 1, find_chunk(*stack_a, 5, 4));
     printn(*stack_a);
     printn(*stack_b);
-    j++;
-    
   
     
-    /*
-    while (i < size)
-    {
-        if((*stack_a)->value < mid)
-            push(stack_b, stack_a, 'b');
-        else
-        {
-            rotate(stack_a, 'a');
-        }
-        i++;
-    }
-    i = 0;
-    size = list_size(*stack_a);
-    while (i < size)
-    {
-        push(stack_b, stack_a, 'b');
-        i++;
-    }
-    printn(*stack_a);
-    printn(*stack_b);
-    insertion_sort(stack_a, stack_b);
-    */
-    /*
-    Then I identify each the largest and smallest integer in stack b, and determine which is most efficient to rotate up/down and push back to stack a (along with the specific moves to make that happen). 
-    */
+
 }
