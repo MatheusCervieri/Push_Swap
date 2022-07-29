@@ -70,36 +70,35 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
 void hundread_sort(t_node **stack_a, t_node **stack_b)
 {
     
-    // I find the median and push everything below the median into stack b.
-    int size;
-    size = list_size(*stack_a);
-    int i = 0;
+
+    int i;
+    int j;
+    i = 0;
     //
     int hold_first;
     int hold_second; 
-
-    
-    hold_first = get_rand_chunk_position_head(*stack_a,  7, 5);
-    hold_second = get_rand_chunk_position_top(*stack_a, 7, 5);
-    ft_printf("Chunk%i\n", find_chunk(*stack_a, 5, 3));
-    ft_printf("Max node%i\n",  find_chunk(*stack_a, 5, 4));
+    j = 0;
+    while (get_rand_chunk_position_head(*stack_a, 5 , 1) != -10 || get_rand_chunk_position_top(*stack_a, 5, 1) != -10)
+    {
+    hold_first = get_rand_chunk_position_head(*stack_a, 5 , 1);
+    hold_second = get_rand_chunk_position_top(*stack_a, 5, 1);
     ft_printf("Hold firsxt%i\n",  hold_first);
     ft_printf("Hold sec%i\n",  hold_second);
 
     if ((hold_first) >= (hold_second))
     {
-        i = size;
-        while ((i) > (size - hold_second))
+        i = 0;
+        while ((i) < (hold_second))
         {
             reverse(stack_a, 'a');
             printn(*stack_a);
-            i--;
+            i++;
         }
     }
     else
     {
         i = 0;
-        while (i < hold_first - 1)
+        while (i < hold_first)
         {
         rotate(stack_a, 'a');
         printn(*stack_a);
@@ -107,11 +106,20 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
         }
        // girar para cima fazendo hold first chegar primeiro - rotate
     }
-    push(stack_b, stack_a, 'b');
-
-    
     printn(*stack_a);
     printn(*stack_b);
+    push(stack_b, stack_a, 'b');
+    }
+    hold_first = get_rand_chunk_position_head(*stack_a,  4, 2);
+    hold_second = get_rand_chunk_position_top(*stack_a, 4, 2);
+    ft_printf("Hold firsxt%i\n",  hold_first);
+    ft_printf("Hold sec%i\n",  hold_second);
+
+    printn(*stack_a);
+    printn(*stack_b);
+    j++;
+    
+  
     
     /*
     while (i < size)

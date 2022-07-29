@@ -54,8 +54,6 @@ int main(int argc, char *argv[])
 
 	sort(&stack_a, &stack_b);
 	 
-	printn(stack_a);
-	printn(stack_b);
 	free_list(&stack_a);
 	free_list(&stack_b);
 	return (0);

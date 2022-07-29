@@ -40,7 +40,7 @@ int get_rand_chunk_position_head(t_node *head, int value_last, int value_first)
 	if(head == NULL)
 		return (0);
 	len = 1;
-	while(head->next != NULL)
+	while(head != NULL)
 	{
         if(head->value < value_last && head->value >= value_first)
             return(len);
@@ -59,12 +59,12 @@ int get_rand_chunk_position_top(t_node *head, int value_last, int value_first)
 	if(head == NULL)
 		return (0);
 	len = 1;
-	while(last_node->prev != NULL)
+	while(last_node != NULL)
 	{
         if(last_node->value < value_last && last_node->value >= value_first)
             return(len);
-		last_node = last_node->prev;
 		len++;
+		last_node = last_node->prev;
 	}
 	return (-10);
 }
