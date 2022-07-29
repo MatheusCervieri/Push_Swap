@@ -72,12 +72,42 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     
     // I find the median and push everything below the median into stack b.
     int size;
-    int mid;
-    mid = find_mid(*stack_a);
     size = list_size(*stack_a);
     int i = 0;
-    ft_printf("MIDDD: %i \n", mid);
     //
+    int hold_first;
+    int hold_second; 
+
+    hold_first = get_rand_chunk_position_head(*stack_a,  find_chunk(*stack_a, 5, 4), find_chunk(*stack_a, 5, 3));
+    hold_second = get_rand_chunk_position_top(*stack_a, find_chunk(*stack_a, 5, 4), find_chunk(*stack_a, 5, 3));
+    ft_printf("Chunk%i\n", find_chunk(*stack_a, 5, 3));
+    ft_printf("Max node%i\n",  find_chunk(*stack_a, 5, 4));
+    ft_printf("Hold firsxt%i\n",  hold_first);
+    ft_printf("Hold sec%i\n",  hold_second);
+
+    if ((hold_first) >= (hold_second))
+    {
+        i = size;
+        while ((i) > (size - hold_second))
+        {
+            reverse(stack_a, 'a');
+            i--;
+        }
+    }
+    else
+    {
+        i = 0;
+        while (i < hold_first - 1)
+        {
+        rotate(stack_a, 'a');
+        i++;
+        }
+       // girar para cima fazendo hold first chegar primeiro - rotate
+    }
+    printn(*stack_a);
+    printn(*stack_b);
+    
+    /*
     while (i < size)
     {
         if((*stack_a)->value < mid)
@@ -98,9 +128,8 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     printn(*stack_a);
     printn(*stack_b);
     insertion_sort(stack_a, stack_b);
+    */
     /*
     Then I identify each the largest and smallest integer in stack b, and determine which is most efficient to rotate up/down and push back to stack a (along with the specific moves to make that happen). 
     */
-
-
 }

@@ -69,3 +69,23 @@ int get_rand_chunk_position_top(t_node *head, int value_last, int value_first)
 	return (-10);
 }
 
+int is_there_chunk(t_node *head, int value_last, int value_first)
+{
+	int len; 
+    t_node  *last_node;
+    
+    last_node = get_last_node(head);
+	if(head == NULL)
+		return (0);
+	len = 1;
+	while(last_node->prev != NULL)
+	{
+        if(last_node->value < value_last && last_node->value >= value_first)
+            return(1);
+		last_node = last_node->prev;
+		len++;
+	}
+	return (0);
+}
+
+
