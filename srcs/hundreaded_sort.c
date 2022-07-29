@@ -119,15 +119,14 @@ void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 
 void hundread_sort(t_node **stack_a, t_node **stack_b)
 {
-    t_node *clone = clone_list(*stack_a);
-    ft_printf("Cloned list: \n");
-    printn(clone);
-       ft_printf("Original listt: \n");
-    printn(*stack_a);
-   push_chunk_to_b(stack_a, stack_b, get_max_node(*stack_a) + 1, find_chunk(*stack_a, 5, 4));
+    t_node *clone_stack = clone_list(*stack_a);
+
+    push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 1), get_min_node(clone_stack));
+    push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 2), find_chunk(clone_stack, 5, 1));
+    push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 3), find_chunk(clone_stack, 5, 2));
+    push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 4), find_chunk(clone_stack, 5, 3));
+    
     printn(*stack_a);
     printn(*stack_b);
-  
-    
-
+    free_list(&clone_stack);
 }
