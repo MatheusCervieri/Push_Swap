@@ -66,6 +66,19 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
         i++;
     }
 }
+/*
+    Chunks:
+    Last:
+    int big = get_max_node(*stack_a) + 1;
+    int small = find_chunk(*stack_a, 5, 4);
+
+    Second: 
+    int big = find_chunk(*stack_a, 5, 2);
+    int small = find_chunk(*stack_a, 5, 1);
+    First:
+    int big = find_chunk(*stack_a, 5, 1);
+    int small = get_min_node(*stack_a);
+*/
 
 void hundread_sort(t_node **stack_a, t_node **stack_b)
 {
@@ -77,8 +90,8 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     //
     int hold_first;
     int hold_second; 
-    int big = get_max_node(*stack_a) + 1;
-    int small = find_chunk(*stack_a, 5, 4);
+    int big = find_chunk(*stack_a, 5, 1);
+    int small = get_min_node(*stack_a);
     ft_printf("Small: %i\n", small);
     ft_printf("Big: %i \n", big);
     j = 0;
