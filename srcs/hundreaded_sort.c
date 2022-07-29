@@ -78,8 +78,9 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
     int hold_first;
     int hold_second; 
 
-    hold_first = get_rand_chunk_position_head(*stack_a,  find_chunk(*stack_a, 5, 4), find_chunk(*stack_a, 5, 3));
-    hold_second = get_rand_chunk_position_top(*stack_a, find_chunk(*stack_a, 5, 4), find_chunk(*stack_a, 5, 3));
+    
+    hold_first = get_rand_chunk_position_head(*stack_a,  7, 5);
+    hold_second = get_rand_chunk_position_top(*stack_a, 7, 5);
     ft_printf("Chunk%i\n", find_chunk(*stack_a, 5, 3));
     ft_printf("Max node%i\n",  find_chunk(*stack_a, 5, 4));
     ft_printf("Hold firsxt%i\n",  hold_first);
@@ -91,6 +92,7 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
         while ((i) > (size - hold_second))
         {
             reverse(stack_a, 'a');
+            printn(*stack_a);
             i--;
         }
     }
@@ -100,10 +102,14 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
         while (i < hold_first - 1)
         {
         rotate(stack_a, 'a');
+        printn(*stack_a);
         i++;
         }
        // girar para cima fazendo hold first chegar primeiro - rotate
     }
+    push(stack_b, stack_a, 'b');
+
+    
     printn(*stack_a);
     printn(*stack_b);
     
