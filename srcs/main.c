@@ -1,21 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/01 22:47:33 by mvieira-          #+#    #+#             */
+/*   Updated: 2022/08/01 22:47:34 by mvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-
-/*
-Step 2 : Check if the numbers in A are all sorted. If so, end the program without printing anything. It’d be preferable to write a function A_is_sorted()
-
-Step 3 : If the size of A ≤ 5, call function sort_small_stack(). Else, call function sort_big_stack()
-
-1- editar as funções de ações para elas já escreverem suas ações correspondentes. 
-1.1- Entender a ordem certinha das stacks.
-2- Sort com 3 números. 
-3- Sort com 5 números. 
-//We need to find the medium. 
-
-4- Sort com 100 números.
-5- Sort com 500 numeros. 
-
-*/
-
 
 void input_validation(int argc, char *argv[], t_node **node)
 {
