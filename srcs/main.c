@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:47:33 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:50:02 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/01 22:56:21 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,16 @@ int	main(int argc, char *argv[])
 	free_list(&stack_b);
 	return (0);
 }
+
+/*
+    sa:
+    swap(stack_a, 'a');
+    rra:
+    reverse(stack_a, 'a');
+    ra:
+    rotate(stack_a, 'a');
+    pa:
+    push(stack_a, stack_b, 'a');
+    pb:
+    push(stack_b, stack_a, 'b');
+*/
