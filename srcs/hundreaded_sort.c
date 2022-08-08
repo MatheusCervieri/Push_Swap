@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 23:02:56 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/08 20:38:23 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,13 +130,16 @@ void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 void hundread_sort(t_node **stack_a, t_node **stack_b)
 {
     t_node *clone_stack = clone_list(*stack_a);
-
+    
+   
+    
     push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 1), get_min_node(clone_stack));
     push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 2), find_chunk(clone_stack, 5, 1));
     push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 3), find_chunk(clone_stack, 5, 2));
     push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 4), find_chunk(clone_stack, 5, 3));
+    //push_chunk_to_b(stack_a, stack_b, max + 1, last);
     
-    printn(*stack_a);
-    printn(*stack_b);
+   // printn(*stack_a);
+   // printn(*stack_b);
     free_list(&clone_stack);
 }

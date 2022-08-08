@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:47:33 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:56:21 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/08 20:36:20 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	input_validation(argc, argv, &stack_a);
 	if (!is_sorted(&stack_a))
-		ft_printf("Não está em ordem :( \n");
+	
 	sort(&stack_a, &stack_b);
 	free_list(&stack_a);
 	free_list(&stack_b);
