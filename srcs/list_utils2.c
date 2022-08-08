@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:44:41 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:46:54 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/01 23:17:48 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int	get_max_node(t_node *head)
 {
+	int	max;
+
 	if (head == NULL)
 	{
 		return (0);
 	}
-	int max = head->value;
+	max = head->value;	
 	while (head != NULL)
 	{
 		if (head->value > max)
