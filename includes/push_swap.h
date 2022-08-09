@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:09:47 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 12:37:58 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 13:09:28 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void super_sort(t_node **stack_a, t_node **stack_b);
 void sort_five_test(t_node **stack_a, t_node **stack_b);
 void	simple_sort(t_node **stack_a);
 int		are_duplicates(t_node **stack_a);
+long int	atoi_long(const char *nptr);
 
 #endif

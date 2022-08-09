@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:47:33 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 12:40:53 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 13:11:33 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	input_validation(char *argv[], t_node **node)
 	{
 		if (!just_numbers(argv[i]))
 			exit_program(node);
-		//if(ft_atoi(argv[i]) > 2147483647)
-			//ft_printf("There is a big number in the arguments");
+		if(atoi_long(argv[i]) > 2147483647)
+			exit_program(node);
 		append_node(node, new_node(ft_atoi(argv[i])));
 		i++;
 	}
