@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_list.c                                        :+:      :+:    :+:   */
+/*   list_utils3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 22:09:48 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 12:20:12 by mvieira-         ###   ########.fr       */
+/*   Created: 2022/08/09 12:28:35 by mvieira-          #+#    #+#             */
+/*   Updated: 2022/08/09 12:41:14 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head)
+int	are_duplicates(t_node **stack_a)
 {
 	t_node	*aux;
-	t_node	*head_clone;
+	t_node	*copy;
 
-	head_clone = *head;
-	if (head_clone == NULL)
-		return ;
-	while (head_clone->next)
+	aux = *stack_a;
+	while (aux->next != NULL)
 	{
-		aux = head_clone->next;
-		free(head_clone);
-		head_clone = aux;
+		copy = aux->next;
+		while (copy != NULL)
+		{
+			if (aux->value == copy->value)
+				return (0);
+			copy = copy->next;
+		}
+		aux = aux->next;
 	}
-	free(head_clone);
-}
-
-void	exit_program(t_node **head)
-{
-	if (head != NULL)
-		free_list(head);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	return (1);
 }

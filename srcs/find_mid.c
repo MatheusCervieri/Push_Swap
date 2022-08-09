@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:35:02 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:36:43 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:47:05 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	find_chunk(t_node *stack_a, int chunks_amount, int chunk)
 	int	*array_values;
 	int	stack_len;
 	int	i;
+	int return_value;
 
 	stack_len = list_size(stack_a);
 	array_values = malloc(stack_len * sizeof(int *));
@@ -72,5 +73,7 @@ int	find_chunk(t_node *stack_a, int chunks_amount, int chunk)
 		i++;
 	}
 	sort_array(array_values, stack_len);
-	return (array_values[((stack_len / chunks_amount)) * chunk]);
+	return_value = array_values[((stack_len / chunks_amount)) * chunk];
+	free(array_values);
+	return (return_value);
 }

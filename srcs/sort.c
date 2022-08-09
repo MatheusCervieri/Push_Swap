@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:56:29 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 10:23:36 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 11:19:43 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,28 @@ void	simple_sort(t_node **stack_a)
 	if (nb1 < nb2 && nb1 > nb3 && nb2 > nb3)
 		reverse(stack_a, 'a');
 }
-
+/*
+	sa:
+	swap(stack_a, 'a');
+	rra:
+	reverse(stack_a, 'a');
+	ra:
+	rotate(stack_a, 'a');
+	pa:
+	push(stack_a, stack_b, 'a');
+	pb:
+	push(stack_b, stack_a, 'b');
+*/
 void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_b, stack_a, 'b');
 	push(stack_b, stack_a, 'b');
 	simple_sort(stack_a);
+	push(stack_a, stack_b, 'a');
+	printn(*stack_a);
+	printn(*stack_b);
+	push(stack_a, stack_b, 'a');
 }
-
 void	sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
@@ -55,6 +69,8 @@ void	sort(t_node **stack_a, t_node **stack_b)
 		swap(stack_a, 'a');
 	else if (size == 3)
 		simple_sort(stack_a);
+	else if (size <= 5)
+		sort_five_test(stack_a, stack_b);
 	else if (size <= 100)
 		hundread_sort(stack_a, stack_b);
 	else if (size <= 500)

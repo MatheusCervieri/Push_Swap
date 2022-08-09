@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 10:24:02 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 11:29:57 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
 		i++;
 	}
 }
+
+
 /*
 	Chunks:
 	Last:
@@ -116,6 +118,57 @@ void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 		}
 		push(stack_b, stack_a, 'b');
 	}
+}
+void push_chunk_to_b_n(t_node **stack_a, t_node **stack_b, int big, int small, int n)
+{
+	int i;
+	i = 0;
+	//
+	int hold_first;
+	int hold_second;
+
+	while (n > 0)
+	{
+		hold_first = get_rand_chunk_position_head(*stack_a, big, small);
+		hold_second = get_rand_chunk_position_top(*stack_a, big, small);
+
+		if ((hold_first) >= (hold_second))
+		{
+			i = 0;
+			while ((i) < n)
+			{
+				reverse(stack_a, 'a');
+				i++;
+			}
+		}
+		else
+		{
+			i = 0;
+			while (i < hold_first - 1)
+			{
+				rotate(stack_a, 'a');
+				i++;
+			}
+			// girar para cima fazendo hold first chegar primeiro - rotate
+		}
+		push(stack_b, stack_a, 'b');
+		n--;
+	}
+}
+
+void sort_five_test(t_node **stack_a, t_node **stack_b)
+{
+	t_node *clone_stack = clone_list(*stack_a);
+	
+	push_chunk_to_b_n(stack_a, stack_b, get_max_node(clone_stack) + 1 , get_min_node(clone_stack), 2);
+	printn(*stack_a);
+	printn(*stack_b);
+	simple_sort(stack_a);
+	printn(*stack_a);
+	printn(*stack_b);
+	insertion_sort(stack_a, stack_b);
+	printn(*stack_a);
+	printn(*stack_b);
 }
 
 void hundread_sort(t_node **stack_a, t_node **stack_b)

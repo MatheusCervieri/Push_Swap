@@ -70,4 +70,14 @@ echo "Moviments:"
 ./push_swap $ARG | wc -l
 echo "Result:"
 ./push_swap $ARG | ./checker_linux $ARG
+echo "Valgrind --------------"
+ARG=$(shuf -i 0-1000 -n 2) 
+valgrind --leak-check=full --show-leak-kinds=all ./push_swap $ARG
+ARG=$(shuf -i 0-1000 -n 3) 
+valgrind --leak-check=full --show-leak-kinds=all ./push_swap $ARG
+
+#ARG=$(shuf -i 0-1000 -n 100) 
+#valgrind --leak-check=full --show-leak-kinds=all ./push_swap $ARG
+#ARG=$(shuf -i 0-1000 -n 500) 
+#valgrind --leak-check=full --show-leak-kinds=all ./push_swap $ARG
 
