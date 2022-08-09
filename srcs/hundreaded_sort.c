@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 10:03:21 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:24:02 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,26 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 4), find_chunk(clone_stack, 5, 3));
 	push_chunk_to_b(stack_a, stack_b, get_max_node(clone_stack) + 1, find_chunk(clone_stack, 5, 4));
 	insertion_sort(stack_a, stack_b);
-	printn(*stack_a);
-	printn(*stack_b);
+	free_list(&clone_stack);
+}
+
+void super_sort(t_node **stack_a, t_node **stack_b)
+{
+	t_node *clone_stack = clone_list(*stack_a);
+
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 1), get_min_node(clone_stack));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 2), find_chunk(clone_stack, 11, 1));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 3), find_chunk(clone_stack, 11, 2));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 4), find_chunk(clone_stack, 11, 3));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 5), find_chunk(clone_stack, 11, 4));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 6), find_chunk(clone_stack, 11, 5));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 7), find_chunk(clone_stack, 11, 6));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 8), find_chunk(clone_stack, 11, 7));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 9), find_chunk(clone_stack, 11, 8));
+	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 10), find_chunk(clone_stack, 11, 9));
+	push_chunk_to_b(stack_a, stack_b, get_max_node(clone_stack) + 1, find_chunk(clone_stack, 11, 10));
+	insertion_sort(stack_a, stack_b);
+	//printn(*stack_a);
+	//printn(*stack_b);
 	free_list(&clone_stack);
 }

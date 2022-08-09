@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:56:29 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:58:07 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:23:36 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ void	sort(t_node **stack_a, t_node **stack_b)
 	size = list_size(*stack_a);
 	if (size == 2)
 		swap(stack_a, 'a');
-	if (size == 3)
+	else if (size == 3)
 		simple_sort(stack_a);
-	if (size <= 100)
+	else if (size <= 100)
 		hundread_sort(stack_a, stack_b);
+	else if (size <= 500)
+		super_sort(stack_a, stack_b);
 }

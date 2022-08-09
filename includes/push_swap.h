@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:09:47 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 23:13:23 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:15:42 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int		get_rand_chunk_position_top(t_node *head, int value_last,
 int		is_there_chunk(t_node *head, int value_last, int value_first);
 int		get_min_node(t_node *head);
 t_node	*clone_list(t_node *head);
+void super_sort(t_node **stack_a, t_node **stack_b);
 
 #endif
