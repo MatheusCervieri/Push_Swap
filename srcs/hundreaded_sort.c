@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 13:26:52 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:01:46 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,16 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
 	int i;
 	int size;
 	i = 0;
-
+	
+	
 	size = list_size(*stack_b);
 	while (i < size)
 	{
+	
 		put_bigger_a(stack_b);
+		
 		push(stack_a, stack_b, 'a');
+		
 		i++;
 	}
 }
@@ -188,11 +192,14 @@ void push_chunk_to_b_n(t_node **stack_a, t_node **stack_b, int big, int small, i
 
 void sort_five_test(t_node **stack_a, t_node **stack_b)
 {
+	//sort five loop infinito = ./push_swap -1 -2 -5 -10 -4
 	put_smaller_a(stack_a);
 	push(stack_b, stack_a, 'b');
 	put_smaller_a(stack_a);
 	push(stack_b, stack_a, 'b');
+	
 	simple_sort(stack_a);
+
 	insertion_sort(stack_a, stack_b);
 }
 

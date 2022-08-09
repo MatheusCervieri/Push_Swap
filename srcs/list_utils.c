@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:40:17 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:42:44 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:18:50 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,29 @@ void	append_node(t_node **first, t_node *new)
 
 t_node	*get_first_node(t_node *head)
 {
+	
 	t_node	*temp;
 
 	if (head == NULL)
 		return (NULL);
 	temp = head;
 	while (temp->prev != NULL)
+	{
+		ft_printf("ACHAMOS A MERDA DO LOOP INFINITO - PQP  \n");
 		temp = temp->prev;
+	}
 	return (temp);
 }
 
 void	insert_beggining(t_node **head, t_node *new)
 {
 	t_node	*first;
-
+	ft_printf("Começo insert beggining! \n"); 
+		ft_printf("QUE PORRA É ESSA \n"); 
+	ft_printf("The value of new %i \n" ,new->value);
 	if (*head == NULL)
 	{
+		
 		*head = new;
 		new->prev = NULL;
 		new->next = NULL;
@@ -80,6 +87,7 @@ void	insert_beggining(t_node **head, t_node *new)
 	}
 	else
 	{
+		ft_printf("Já travou \n");
 		first = get_first_node(*head);
 		first->prev = new;
 		new->prev = NULL;
