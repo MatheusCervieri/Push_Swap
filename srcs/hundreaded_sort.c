@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 11:29:57 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 13:26:52 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,36 @@ void put_bigger_a(t_node **stack_b)
 		while (i < big_position - 1)
 		{
 			rotate(stack_b, 'b'); // rb
+			i++;
+		}
+	}
+}
+
+void put_smaller_a(t_node **stack_b)
+{
+	int size; // tootal numbers in the list;
+	int middle;
+	int big_position;
+	int i;
+
+	size = list_size(*stack_b);
+	middle = size / 2;
+	big_position = get_node_position(*stack_b, get_min_node(*stack_b));
+	if (big_position > middle)
+	{
+		i = size;
+		while (i + 1 > big_position)
+		{
+			reverse(stack_b, 'a');
+			i--;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < big_position - 1)
+		{
+			rotate(stack_b, 'a'); // rb
 			i++;
 		}
 	}
@@ -158,17 +188,12 @@ void push_chunk_to_b_n(t_node **stack_a, t_node **stack_b, int big, int small, i
 
 void sort_five_test(t_node **stack_a, t_node **stack_b)
 {
-	t_node *clone_stack = clone_list(*stack_a);
-	
-	push_chunk_to_b_n(stack_a, stack_b, get_max_node(clone_stack) + 1 , get_min_node(clone_stack), 2);
-	printn(*stack_a);
-	printn(*stack_b);
+	put_smaller_a(stack_a);
+	push(stack_b, stack_a, 'b');
+	put_smaller_a(stack_a);
+	push(stack_b, stack_a, 'b');
 	simple_sort(stack_a);
-	printn(*stack_a);
-	printn(*stack_b);
 	insertion_sort(stack_a, stack_b);
-	printn(*stack_a);
-	printn(*stack_b);
 }
 
 void hundread_sort(t_node **stack_a, t_node **stack_b)
