@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 09:58:03 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 10:03:21 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,17 +122,13 @@ void hundread_sort(t_node **stack_a, t_node **stack_b)
 {
 	t_node *clone_stack = clone_list(*stack_a);
 
-	ft_printf("5,4%i \n", find_chunk(clone_stack, 5, 4));
-	ft_printf("5,5%i \n", find_chunk(clone_stack, 5, 4));
-	ft_printf("5,5%i \n", find_chunk(clone_stack, 5, 4));
-	ft_printf("Max%i\n", get_max_node(clone_stack) + 1);
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 1), get_min_node(clone_stack));
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 2), find_chunk(clone_stack, 5, 1));
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 3), find_chunk(clone_stack, 5, 2));
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 5, 4), find_chunk(clone_stack, 5, 3));
 	push_chunk_to_b(stack_a, stack_b, get_max_node(clone_stack) + 1, find_chunk(clone_stack, 5, 4));
 	insertion_sort(stack_a, stack_b);
-	//printn(*stack_a);
-	//printn(*stack_b);
+	printn(*stack_a);
+	printn(*stack_b);
 	free_list(&clone_stack);
 }
