@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:25:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 10:27:50 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:30:58 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,23 @@ void	reverse_loop(t_node **stack_a, int hold_second)
 	}
 }
 
-void	push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
+void	rotate_loop(t_node **stack_a, int hold_first)
 {
 	int	i;
+
+	i = 0;
+	while (i < hold_first - 1)
+	{
+		rotate(stack_a, 'a');
+		i++;
+	}
+}
+
+void	push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
+{
 	int	hold_first;
 	int	hold_second;
 
-	i = 0;
 	while (get_rand_chunk_position_head(*stack_a, big,
 			small) != -10 || get_rand_chunk_position_top(*stack_a,
 			big, small) != -10)
@@ -120,12 +130,7 @@ void	push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 		}
 		else
 		{
-			i = 0;
-			while (i < hold_first - 1)
-			{
-				rotate(stack_a, 'a');
-				i++;
-			}
+			rotate_loop(stack_a, hold_first);
 		}
 		push(stack_b, stack_a, 'b');
 	}
