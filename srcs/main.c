@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:47:33 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 23:29:33 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:12:21 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	input_validation(char *argv[], t_node **node)
 	{
 		if (!just_numbers(argv[i]))
 			exit_program(node);
-		if (atoi_long(argv[i]) > 2147483647)
+		if (atoi_long(argv[i]) > 2147483647 || atoi_long(argv[i]) < -2147483647)
 			exit_program(node);
 		append_node(node, new_node(ft_atoi(argv[i])));
 		i++;
@@ -40,7 +40,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 	{
 		ft_putstr_fd("Error\n", 2);
-		return (1);
+		exit(1);
 	}
 	input_validation(argv, &stack_a);
 	if (!is_sorted(&stack_a))
