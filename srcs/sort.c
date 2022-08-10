@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:56:29 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 13:35:00 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:32:04 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,7 @@ void	simple_sort(t_node **stack_a)
 	if (nb1 < nb2 && nb1 > nb3 && nb2 > nb3)
 		reverse(stack_a, 'a');
 }
-/*
-	sa:
-	swap(stack_a, 'a');
-	rra:
-	reverse(stack_a, 'a');
-	ra:
-	rotate(stack_a, 'a');
-	pa:
-	push(stack_a, stack_b, 'a');
-	pb:
-	push(stack_b, stack_a, 'b');
-*/
+
 void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_b, stack_a, 'b');
@@ -60,6 +49,7 @@ void	sort_five(t_node **stack_a, t_node **stack_b)
 	printn(*stack_b);
 	push(stack_a, stack_b, 'a');
 }
+
 void	sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;

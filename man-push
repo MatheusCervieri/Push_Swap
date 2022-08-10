@@ -1,0 +1,13 @@
+/*
+    sa:
+    swap(stack_a, 'a');
+    rra:
+    reverse(stack_a, 'a');
+    ra:
+    rotate(stack_a, 'a');
+    pa:
+    push(stack_a, stack_b, 'a');
+    pb:
+    push(stack_b, stack_a, 'b');
+*/
+

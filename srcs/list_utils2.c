@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:44:41 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 23:26:21 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:27:56 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,3 @@ int	get_rand_chunk_position_top(t_node *head, int value_last, int value_first)
 	}
 	return (-10);
 }
-
