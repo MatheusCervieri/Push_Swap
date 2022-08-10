@@ -6,11 +6,23 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:25:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 00:38:45 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:27:50 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	put_bigger_util(t_node **head, int position)
+{
+	int	i;
+
+	i = 0;
+	while (i < position - 1)
+	{
+		rotate(head, 'b');
+		i++;
+	}
+}
 
 void	put_bigger_a(t_node **stack_b)
 {
@@ -33,12 +45,7 @@ void	put_bigger_a(t_node **stack_b)
 	}
 	else
 	{
-		i = 0;
-		while (i < big_position - 1)
-		{
-			rotate(stack_b, 'b');
-			i++;
-		}
+		put_bigger_util(stack_b, big_position);
 	}
 }
 
@@ -63,12 +70,7 @@ void	put_smaller(t_node **head)
 	}
 	else
 	{
-		i = 0;
-		while (i < small_position - 1)
-		{
-			rotate(head, 'a');
-			i++;
-		}
+		put_bigger_util(head, small_position);
 	}
 }
 
@@ -83,6 +85,18 @@ void	insertion_sort(t_node **stack_a, t_node **stack_b)
 	{
 		put_bigger_a(stack_b);
 		push(stack_a, stack_b, 'a');
+		i++;
+	}
+}
+
+void	reverse_loop(t_node **stack_a, int hold_second)
+{
+	int	i;
+
+	i = 0;
+	while ((i) < (hold_second))
+	{
+		reverse(stack_a, 'a');
 		i++;
 	}
 }
@@ -102,12 +116,7 @@ void	push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 		hold_second = get_rand_chunk_position_top(*stack_a, big, small);
 		if ((hold_first) >= (hold_second))
 		{
-			i = 0;
-			while ((i) < (hold_second))
-			{
-				reverse(stack_a, 'a');
-				i++;
-			}
+			reverse_loop(stack_a, hold_second);
 		}
 		else
 		{
