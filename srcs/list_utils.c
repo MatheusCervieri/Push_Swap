@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:40:17 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 23:18:45 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:22:15 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,3 @@ void	insert_beggining(t_node **head, t_node *new)
 		*head = new;
 	}
 }
-

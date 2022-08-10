@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:44:41 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 09:55:12 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:26:21 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	get_max_node(t_node *head)
 	{
 		return (0);
 	}
-	max = head->value;	
+	max = head->value;
 	while (head != NULL)
 	{
 		if (head->value > max)
@@ -29,16 +29,18 @@ int	get_max_node(t_node *head)
 		}
 		head = head->next;
 	}
-	return max;
+	return (max);
 }
 
 int	get_min_node(t_node *head)
 {
+	int	min;
+
 	if (head == NULL)
 	{
 		return (0);
 	}
-	int min = head->value;
+	min = head->value;
 	while (head != NULL)
 	{
 		if (head->value < min)
@@ -47,12 +49,12 @@ int	get_min_node(t_node *head)
 		}
 		head = head->next;
 	}
-	return min;
+	return (min);
 }
 
 int	get_node_position(t_node *head, int value)
 {
-	int len;
+	int	len;
 
 	if (head == NULL)
 		return (0);
@@ -103,40 +105,3 @@ int	get_rand_chunk_position_top(t_node *head, int value_last, int value_first)
 	return (-10);
 }
 
-int	is_there_chunk(t_node *head, int value_last, int value_first)
-{
-	int		len;
-	t_node	*last_node;
-
-	last_node = get_last_node(head);
-	if (head == NULL)
-		return (0);
-	len = 1;
-	while (last_node->prev != NULL)
-	{
-		if (last_node->value < value_last && last_node->value >= value_first)
-			return (1);
-		last_node = last_node->prev;
-		len++;
-	}
-	return (0);
-}
-
-t_node	*clone_list(t_node *head)
-{
-	t_node	*cloned;
-	t_node	*cloned_head;
-
-	cloned = malloc(list_size(head) * sizeof(t_node *));
-	cloned_head = cloned;
-	cloned->value = head->value;
-	cloned->next = NULL;
-	cloned->prev = NULL;
-	head = head->next;
-	while (head != NULL)
-	{
-		append_node(&cloned, new_node(head->value));
-		head = head->next;
-	}
-	return (cloned_head);
-}
