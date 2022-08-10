@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:25:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 10:30:58 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:44:39 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,12 @@ void	put_smaller(t_node **head)
 	}
 	else
 	{
-		put_bigger_util(head, small_position);
+		i = 0;
+		while (i < small_position - 1)
+		{
+			rotate(head, 'a');
+			i++;
+		}
 	}
 }
 
