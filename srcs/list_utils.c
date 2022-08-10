@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:40:17 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 22:39:45 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:18:45 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	insert_beggining(t_node **head, t_node *new)
 
 	if (*head == NULL)
 	{
-		
 		*head = new;
 		new->prev = NULL;
 		new->next = NULL;
@@ -82,30 +81,3 @@ void	insert_beggining(t_node **head, t_node *new)
 	}
 }
 
-int	list_size(t_node *head)
-{
-	int	len;
-
-	if (head == NULL)
-		return (0);
-	len = 1;
-	while (head->next != NULL)
-	{
-		head = head->next;
-		len++;
-	}
-	return (len);
-}
-
-void	printn(t_node *first)
-{
-	t_node	*temp;
-
-	temp = first;
-	while (temp != NULL)
-	{
-		ft_printf("%i ,", temp->value);
-		temp = temp->next;
-	}
-	ft_printf("\n");
-}
