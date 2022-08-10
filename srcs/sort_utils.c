@@ -6,21 +6,18 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:25:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 00:29:01 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:38:45 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-void put_bigger_a(t_node **stack_b)
+void	put_bigger_a(t_node **stack_b)
 {
-	int size;
-	int middle;
-	int big_position;
-	int i;
+	int	size;
+	int	middle;
+	int	big_position;
+	int	i;
 
 	size = list_size(*stack_b);
 	middle = size / 2;
@@ -45,12 +42,12 @@ void put_bigger_a(t_node **stack_b)
 	}
 }
 
-void put_smaller(t_node **head)
+void	put_smaller(t_node **head)
 {
-	int size;
-	int middle;
-	int small_position;
-	int i;
+	int	size;
+	int	middle;
+	int	small_position;
+	int	i;
 
 	size = list_size(*head);
 	middle = size / 2;
@@ -75,10 +72,10 @@ void put_smaller(t_node **head)
 	}
 }
 
-void insertion_sort(t_node **stack_a, t_node **stack_b)
+void	insertion_sort(t_node **stack_a, t_node **stack_b)
 {
-	int i;
-	int size;
+	int	i;
+	int	size;
 
 	i = 0;
 	size = list_size(*stack_b);
@@ -90,18 +87,19 @@ void insertion_sort(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
+void	push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small)
 {
-	int i;
-	int hold_first;
-	int hold_second;
+	int	i;
+	int	hold_first;
+	int	hold_second;
 
 	i = 0;
-	while (get_rand_chunk_position_head(*stack_a, big, small) != -10 || get_rand_chunk_position_top(*stack_a, big, small) != -10)
+	while (get_rand_chunk_position_head(*stack_a, big,
+			small) != -10 || get_rand_chunk_position_top(*stack_a,
+			big, small) != -10)
 	{
 		hold_first = get_rand_chunk_position_head(*stack_a, big, small);
 		hold_second = get_rand_chunk_position_top(*stack_a, big, small);
-
 		if ((hold_first) >= (hold_second))
 		{
 			i = 0;

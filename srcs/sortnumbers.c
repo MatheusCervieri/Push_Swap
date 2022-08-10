@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hundreaded_sort.c                                  :+:      :+:    :+:   */
+/*   sortnumbers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:02:55 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 00:24:36 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:31:57 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 void	sort_four(t_node **stack_a, t_node **stack_b)
 {
@@ -81,7 +79,7 @@ void	super_sort(t_node **stack_a, t_node **stack_b)
 	clone_stack = clone_list(*stack_a);
 	push_chunk_to_b(stack_a, stack_b, find_chunk(clone_stack, 11, 1),
 		get_min_node(clone_stack));
-	push_chunks_to_b(clone_stack, stack_a , stack_b);
+	push_chunks_to_b(clone_stack, stack_a, stack_b);
 	push_chunk_to_b(stack_a, stack_b, get_max_node(clone_stack) + 1,
 		find_chunk(clone_stack, 11, 10));
 	insertion_sort(stack_a, stack_b);
