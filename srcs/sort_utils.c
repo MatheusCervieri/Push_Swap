@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:25:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/10 10:44:39 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:50:29 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,18 @@ void	put_bigger_a(t_node **stack_b)
 	}
 }
 
+void	put_smaller_util(t_node **head, int small_position)
+{
+	int	i;
+
+	i = 0;
+	while (i < small_position - 1)
+	{
+		rotate(head, 'a');
+		i++;
+	}
+}
+
 void	put_smaller(t_node **head)
 {
 	int	size;
@@ -70,12 +82,7 @@ void	put_smaller(t_node **head)
 	}
 	else
 	{
-		i = 0;
-		while (i < small_position - 1)
-		{
-			rotate(head, 'a');
-			i++;
-		}
+		put_smaller_util(head, small_position);
 	}
 }
 
