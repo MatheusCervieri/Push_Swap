@@ -11,3 +11,16 @@
     push(stack_b, stack_a, 'b');
 */
 
+/*
+	Chunks:
+	Last:
+	int big = get_max_node(*stack_a) + 1;
+	int small = find_chunk(*stack_a, 5, 4);
+
+	Second:
+	int big = find_chunk(*stack_a, 5, 2);
+	int small = find_chunk(*stack_a, 5, 1);
+	First:
+	int big = find_chunk(*stack_a, 5, 1);
+	int small = get_min_node(*stack_a);
+*/
