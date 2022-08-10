@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:09:47 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 13:09:28 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:29:25 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
-
-typedef struct s_stacks
-{
-	t_node	*head_a;
-}	t_stacks;
 
 void	append_node(t_node **first, t_node *new);
 t_node	*get_last_node(t_node *first);
@@ -59,9 +54,14 @@ int		is_there_chunk(t_node *head, int value_last, int value_first);
 int		get_min_node(t_node *head);
 t_node	*clone_list(t_node *head);
 void super_sort(t_node **stack_a, t_node **stack_b);
-void sort_five_test(t_node **stack_a, t_node **stack_b);
+void sort_five(t_node **stack_a, t_node **stack_b);
 void	simple_sort(t_node **stack_a);
 int		are_duplicates(t_node **stack_a);
 long int	atoi_long(const char *nptr);
+void	sort_four(t_node **stack_a, t_node **stack_b);
+void put_smaller(t_node **head);
+void put_bigger_a(t_node **stack_b);
+void insertion_sort(t_node **stack_a, t_node **stack_b);
+void push_chunk_to_b(t_node **stack_a, t_node **stack_b, int big, int small);
 
 #endif

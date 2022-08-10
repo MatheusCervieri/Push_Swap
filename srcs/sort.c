@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 22:56:29 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/08/09 23:32:04 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:22:07 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,6 @@ void	simple_sort(t_node **stack_a)
 		reverse(stack_a, 'a');
 }
 
-void	sort_five(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_b, stack_a, 'b');
-	push(stack_b, stack_a, 'b');
-	simple_sort(stack_a);
-	push(stack_a, stack_b, 'a');
-	printn(*stack_a);
-	printn(*stack_b);
-	push(stack_a, stack_b, 'a');
-}
-
 void	sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
@@ -59,8 +48,10 @@ void	sort(t_node **stack_a, t_node **stack_b)
 		swap(stack_a, 'a');
 	else if (size == 3)
 		simple_sort(stack_a);
-	else if (size <= 5)
-		sort_five_test(stack_a, stack_b);
+	else if (size == 4)
+		sort_four(stack_a, stack_b);
+	else if (size == 5)
+		sort_five(stack_a, stack_b);
 	else if (size <= 100)
 		hundread_sort(stack_a, stack_b);
 	else if (size <= 500)
